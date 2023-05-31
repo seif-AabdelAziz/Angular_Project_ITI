@@ -1,0 +1,69 @@
+<form class="bg-light pt-4 " style="width:1000px" [formGroup]="updateValid"
+    (ngSubmit)="update(name.value,email.value,phone.value,address.value)">
+    <h1 class="text-center text-success ">User Information</h1>
+    <hr style="width: 90%;margin-left: auto;margin-right: auto;" />
+
+    <div class="container">
+        <div class="row d-flex flex-row">
+
+            <div class="mb-3 col-6">
+                <label for="InputName" class="form-label mt-3 ms-5">Name</label>
+                <input #name formControlName="name" type="text" class="form-control  ms-5" style="width:300px;"
+                    id="InputName">
+                <div *ngIf="updateValid.get('name')?.invalid && updateValid.get('name')?.touched "
+                    class="ms-5 pt-1 text-danger">
+                    Name is Required
+                </div>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label for="inputEmail" class="form-label mt-3 ms-5">Email</label>
+                <input #email formControlName="email" type="email" class="form-control ms-5" style="width:300px;"
+                    id="inputEmail">
+                <div *ngIf="updateValid.get('email')?.invalid && updateValid.get('email')?.touched "
+                    class="ms-5 pt-1 text-danger">
+                    Email is required and must be like
+                    (example@domain.com)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row d-flex flex-row">
+
+            <div class="mb-3 col-6">
+                <label for="inputPhone" class="form-label mt-3 ms-5">Phone</label>
+                <input #phone formControlName="phone" type="text" class="form-control ms-5" style="width:300px;"
+                    id="inputPhone">
+                <div *ngIf="updateValid.get('phone')?.invalid && updateValid.get('phone')?.touched "
+                    class="ms-5 pt-1 text-danger">
+                    Phone number is Required
+                </div>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label class="form-label mt-3 ms-5">
+                    Address
+                </label>
+                <br>
+                <select #address formControlName="city" class="btn btn-white dropdown-toggle border ms-5"
+                    style="width:300px;">
+                    <option class="dropdown-item" value="Alex">Alexandria</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Ismailia">Ismailia</option>
+                    <option value="Assiut">Assiut</option>
+                </select>
+                <div *ngIf="updateValid.get('city')?.invalid && updateValid.get('city')?.touched "
+                    class="ms-5 pt-1 text-danger">
+                    Address is Required
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4 pb-4">
+        <button type="submit" class="btn btn-success" style="width: 200px;">Update</button>
+    </div>
+
+</form>

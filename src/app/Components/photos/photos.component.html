@@ -1,0 +1,29 @@
+<div style="margin-top:70px;"></div>
+<div class="navbar bg-primary">
+    <div class="container justify-content-center" style="height: 50px;">
+        <span class="fs-4 text-white">{{userData.name}}</span>
+        <div class="d-flex flex-column ps-5">
+            <span class="text-white border-end border-start ps-5 pe-5">{{userData.email}}</span>
+            <span class="text-white border-end border-start ps-5 pe-5">{{userData.phone}}</span>
+        </div>
+        <div class="d-flex flex-column ps-5">
+            <span class="text-white">Address</span>
+            <span class="text-white">{{userData.address.city}}</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="width: 80%;">
+    <div class="row col-12 text-center">
+        <h2 class="mt-4">{{userData.name}}'s Albums</h2>
+        <hr>
+    </div>
+
+
+    <div class="d-flex flex-wrap justify-content-center">
+        <div *ngFor="let Photos of albumData" class="card text-center m-2 " style="width: 150px;">
+            <img src="{{Photos.url}}" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container" style="width: 750px; height: 300px;">
+    <div class="row text-center m-4">
+        <i class="fa-regular fa-circle-xmark" style="color: #ee382b;font-size: 100px;"></i>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+        <h1>Are you sure ?</h1>
+        <h1 class="fs-6 text-secondary">Do you really want to delete {{data.name}} ? this process can't be undone.</h1>
+    </div>
+
+    <div class="row d-flex flex-row justify-content-center">
+        <button type="button" class="btn btn-danger col-4 m-3" (click)="Delete()">Delete</button>
+        <button type="button" class="btn btn-primary col-4 m-3" (click)="Cancel()">Cancel</button>
+    </div>
+</div>
